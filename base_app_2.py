@@ -43,7 +43,7 @@ from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
 
 #text analysers
-from textblob import TextBlob
+#from textblob import TextBlob
 from gensim.summarization import summarize
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
