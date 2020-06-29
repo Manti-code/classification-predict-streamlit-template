@@ -338,13 +338,13 @@ def main():
                         tweet_cv = joblib.load(news_vectorizer)
                         predictor = joblib.load(open(os.path.join("resources/Logistic_regression.pkl"),"rb"))
 
-                    results = []
-                    n = 0
-                    while n < len(tweet_text):
-                        vect_text = tweet_cv.transform([tweet_text['message'][n]]).toarray()
-                        prediction = predictor.predict(vect_text)
-                        results.append((tweet_text['message'][n],prediction))
-                        n+=1
+                results = []
+                n = 0
+                while n < len(tweet_text):
+                    vect_text = tweet_cv.transform([tweet_text['message'][n]]).toarray()
+                    prediction = predictor.predict(vect_text)
+                    results.append((tweet_text['message'][n],prediction))
+                    n+=1
 
                     df = pd.DataFrame(results,columns=['Message','Sentiment'])
 
